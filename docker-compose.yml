@@ -10,7 +10,7 @@ services:
       - 8306:3306
     env_file: ./.env
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
   nginx:
     build: './nginx'
     volumes:
