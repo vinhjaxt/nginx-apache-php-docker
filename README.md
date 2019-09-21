@@ -4,10 +4,10 @@
 - Apache + PHP: `./public_html`
 - MySQL (mariadb) credential at: .env
 
-http://localhost:8000/nginx-index.html
-http://localhost:8000/apache-index.html
-http://localhost:8000/index.php
-http://localhost:8000/phpinfo.php
-http://localhost:8000/phpmyadmin
+- http://localhost:8000/nginx-index.html
+- http://localhost:8000/apache-index.html
+- http://localhost:8000/index.php
+- http://localhost:8000/phpinfo.php
+- http://localhost:8000/phpmyadmin
 
 @vinhjaxt
