@@ -1,0 +1,30 @@
+# Request from browser => nginx => static or php, if not static => php-apache => static or php
+# http://localhost:8000/nginx-index.html
+# http://localhost:8000/apache-index.html
+# http://localhost:8000/index.php
+version: '3'
+services:
+  mysql-mariadb:
+    build: './mysql'
+    ports:
+      - 8306:3306
+    env_file: ./.env
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+  nginx:
+    build: './nginx'
+    volumes:
+      - ./nginx-public_html:/home/public_html
+    ports:
+      - 8000:80
+    depends_on:
+      - php-apache
+  php-apache:
+    build: './php-apache'
+    ports:
+      - 8001:80
+    volumes:
+      - ./public_html:/home/public_html
+    env_file: ./.env
+    depends_on:
+      - mysql-mariadb
